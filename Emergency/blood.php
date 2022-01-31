@@ -149,7 +149,7 @@ else {
 
 <section class="main-gamla">
   <header>
-      <a href="../index.html" class="logo"><h2>PUASH</h2> Proper Use of Antibiotic & Safe Health</a>
+      <a href="../index.html" class="logo"><h2>Comfort Sheba</h2> Discuss Your Problems & Safe Health</a>
   </header>
 
     <div class="gamla">

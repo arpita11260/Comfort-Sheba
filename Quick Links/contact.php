@@ -92,7 +92,7 @@ else {
   <body>
 <section class="total-bdy" style="margin-top:-15px;">
       <header>
-          <a href="../index.html" class="logo"><h2>PUASH</h2> Proper Use of Antibiotic & Safe Health</a>
+          <a href="../index.html" class="logo"><h2>Comfort Sheba</h2>Discuss Your Problems & Safe Health</a>
           <!-- <a href="#" class="contact">Contact</a> -->
 
       </header>
@@ -107,8 +107,8 @@ else {
                             <p class="c-black">Please fillup this form first to contact with us. </p>
                             <p class="c-black">without form fillup, message will not pass.</p>
                             <p class="c-black">Don't forget to give us your review.</p>
-                            <p class="c-black">To stay with PUASH, many many thank you.</p>
-                      <p class="c-black">Email: <span>puash.bd@gmail.com</span></p>
+                            <p class="c-black">To stay with Comfort Sheba, many many thank you.</p>
+                      <p class="c-black">Email: <span>comfort.sheba18@gmail.com</span></p>
 
                      </div>
                   </div>
@@ -125,7 +125,7 @@ else {
                       <span><input type="email" name="email" value="" required></span>
                     </div>
                     <div class="from">
-                      <span><label class="c-black">MOBILE.NO</label></span>
+                      <span><label class="c-black">MOBILE.NUMBER</label></span>
                       <span><input type="number" name="mobile" value="" required></span>
                     </div>
                     <div>
@@ -148,7 +148,7 @@ else {
 <!-- footer -->
     <div class="copyrightText">
       <p>
-        Copyright © 2021 By PUASH Team. All Rights Reserved.
+      Copyright © 2022 By Comfort Sheba. All Rights Reserved.
       </p>
     </div>
 

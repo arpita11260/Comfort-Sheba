@@ -11,7 +11,7 @@
 			<footer>
 				<div class="copyrightText">
 					<p>
-						Copyright © 2021 By PUASH Team. All Rights Reserved.
+						Copyright © 2022 By Comfort Sheba. All Rights Reserved.
 					</p>
 				</div>
 			</footer>
