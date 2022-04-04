@@ -29,7 +29,8 @@
 
 
         <div class="left_area">
-              <h3><a href="../../index.html"><span style="color: floralwhite !important;">PUA</span><span class="second">SH</span></a></h3>
+            <h3><a href="../../index.html"><span style="color: floralwhite !important;">Comfort</span><span class="second">Sheba</span></a></h3>
+          </a>
         </div>
 
         <div class="right_area">
@@ -39,10 +40,10 @@
 
 <?php
 $con = mysqli_connect("localhost", "root", "", "hms");
-         $query = "select * from users where id='".$_SESSION['id']."'";
+         $query = "select * from pharmacist where id='".$_SESSION['id']."'";
          if($result = mysqli_query($con, $query)){
              while($row = mysqli_fetch_assoc($result)){
-                 $mark = explode(" ", $row["fullname"]);
+                 $mark = explode(" ", $row["name"]);
                       echo $mark[0]." ";
                       echo $mark[1];
                    }
@@ -80,11 +81,13 @@ $con = mysqli_connect("localhost", "root", "", "hms");
       </div>
 
       <!-- start: MAIN NAVIGATION MENU -->
-      
+      <div class="navbar-title">
+
+      </div>
 
       <ul class="main-navigation-menu">
         <li>
-          <a href="dashboard.php" class="side-content">
+          <a href="dashboard.php" style="color: #ffffff" class="side-content">
             <div class="item-content">
               <div class="item-media">
                 <i class="fa fa-television" style="font-size:25px;"></i>
@@ -97,67 +100,77 @@ $con = mysqli_connect("localhost", "root", "", "hms");
         </li>
 
         <li>
-          <a href="my-profile.php" class="side-content">
+          <a href="my-profile.php" style="color: #ffffff" class="side-content">
             <div class="item-content">
               <div class="item-media">
                 <i class="fa fa-user" style="font-size:25px;"></i>
               </div>
               <div class="item-inner">
-                <span class="title">&nbsp;&nbsp; Profile </span>
+                <span class="title">&nbsp;&nbsp; My Profile </span>
               </div>
             </div>
           </a>
         </li>
 
         <li>
-								<a href="appointment-history.php" class="side-content">
-									<div class="item-content">
-										<div class="item-media">
-											<i class="fa fa-calendar" style="font-size:25px;"></i>
-										</div>
-										<div class="item-inner">
-											<span class="title">&nbsp; Appointment History </span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="prescription.php" class="side-content">
-									<div class="item-content">
-										<div class="item-media">
-											<i class="fa fa-heartbeat custom" style="font-size:25px;"></i>
-										</div>
-										<div class="item-inner">
-											<span class="title">&nbsp;Prescription and Medication </span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="doctorlist.php" class="side-content">
-									<div class="item-content">
-										<div class="item-media">
-											<i class="fa fa-user-md" style="font-size:25px;"></i>
-										</div>
-										<div class="item-inner">
-											<span class="title">&nbsp; Doctors List</span>
-										</div>
-									</div>
-								</a>
-							</li>
+            <a href="#" style="color: #ffffff" class="side-content">
+              <div class="item-content">
+                <div class="item-media">
+                  <i class="fa fa-group" style="font-size:25px;"></i>
+                </div>
+                <div class="item-inner">
+                  <span class="title">&nbsp;Patients </span><i class="fa fa-chevron-circle-down"></i>
+                </div>
+              </div>
+            </a>
+            <ul class="sub-menu" style=" background-color: black;">
+              <li>
+                <a href="patient-prescription.php" class="side-content">
+                  <span class="title"> View prescription </span>
+                </a>
+              </li>
+            </ul>
+        </li>
 
-							<li>
-								<a href="pharmacistlist.php" class="side-content">
-									<div class="item-content">
-										<div class="item-media">
-											<i class="fa fa-group" style="font-size:20px;"></i>
-										</div>
-										<div class="item-inner">
-											<span class="title">&nbsp;Pharmacist List</span>
-										</div>
-									</div>
-								</a>
-							</li>
+
+
+        <li>
+          <a href="#" style="color: #ffffff" class="side-content">
+            <div class="item-content">
+              <div class="item-media">
+                <i class="fa fa-file-text-o" style="font-size:25px;"></i>
+              </div>
+              <div class="item-inner">
+                <span class="title">&nbsp; Manage Medicine </span><i class="fa fa-chevron-circle-down"></i>
+              </div>
+            </div>
+          </a>
+          <ul class="sub-menu" style=" background-color: black;">
+            <li>
+              <a href="add.php" class="side-content">
+                <span class="title">+ Add Medicines </span>
+              </a>
+            </li>
+            <li>
+              <a href="stock.php" class="side-content">
+                <span class="title">Medicines Stock List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="doctorlist.php" style="color: #ffffff" class="side-content">
+            <div class="item-content">
+              <div class="item-media">
+                <i class="fa fa-user-md" style="font-size:25px;"></i>
+              </div>
+              <div class="item-inner">
+                <span class="title">&nbsp; Doctorlist </span>
+              </div>
+            </div>
+          </a>
+        </li>
       </ul>
       <!-- end: CORE FEATURES -->
 

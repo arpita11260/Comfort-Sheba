@@ -53,7 +53,7 @@ $output='';
   <body>
 <section class="total-bdy">
       <header>
-          <a href="../index.html" class="logo"><h2 style="color:white;">PUASH</h2> Proper Use of Antibiotic & Safe Health</a>
+          <a href="../index.html" class="logo"><h2 style="color:white;">Comfort Sheba</h2> Discuss Your Problems & Safe Health</a>
           <!-- <a href="#" class="contact">Contact</a> -->
 
       </header>

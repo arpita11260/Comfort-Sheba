@@ -141,16 +141,15 @@ else {
           </div>
         </div>
 
-    </section>
-
-
-
-<!-- footer -->
+        <!-- footer -->
     <div class="copyrightText">
       <p>
       Copyright © 2022 By Comfort Sheba. All Rights Reserved.
       </p>
     </div>
+    </section>
+
+
 
     <script type="text/javascript">
       // For Sticky Nav Bar

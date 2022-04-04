@@ -37,7 +37,7 @@
 
 <section class="total-bdy">
       <header>
-          <a href="index.html" class="logo" style="color: black;"><h2 style="color: black;">PUASH</h2><span style="font-size:20px">Proper Use of Antibiotic & Safe Health</span></a>
+          <a href="index.html" class="logo" style="color: black;"><h2 style="color: black;">Comfort Sheba</h2><span style="font-size:20px">Discuss Your Problems & Safe Health</span></a>
           <!-- <a href="#" class="contact">Contact</a> -->
       </header>
 	  <div class="container" style='top: 250px; position: relative; margin: 0;'>

@@ -4,12 +4,16 @@ session_start();
 include('../../include/config.php');
 include('include/checklogin.php');
 check_login();
-$que=mysqli_query($con,"select * from doctors where id='".$_SESSION['id']."'");
+$que=mysqli_query($con,"select * from users where id='".$_SESSION['id']."'");
 
 // 1st personal info page er
 if(isset($_POST['per_i'])){
+$fname=$_POST['fullname'];
+$birthdate=$_POST['birthdate'];
 $gender=$_POST['gender'];
-$sql=mysqli_query($con,"Update doctors set gender='$gender' where id='".$_SESSION['id']."'");
+$blood_group=$_POST['blood_group'];
+$occupation=$_POST['occupation'];
+$sql=mysqli_query($con,"Update users set fullname='$fname',birthdate='$birthdate',gender='$gender',blood_group='$blood_group',occupation='$occupation' where id='".$_SESSION['id']."'");
 if($sql)
 {
 $_SESSION['upmsg']="Your Profile updated Successfully";
@@ -18,11 +22,10 @@ header("location:my-profile.php");
 
 // 2nd contact info page er
 if(isset($_POST['con_i'])){
-$contact=$_POST['contact'];
 $address=$_POST['address'];
-$hospital_name=$_POST['hospital_name'];
-$docFees=$_POST['docFees'];
-$sql=mysqli_query($con,"Update doctors set contactno='$contact',address='$address',hospital_name='$hospital_name',docFees='$docFees' where id='".$_SESSION['id']."'");
+$city=$_POST['city'];
+$phone=$_POST['phone'];
+$sql=mysqli_query($con,"Update users set address='$address',city='$city',phone='$phone' where id='".$_SESSION['id']."'");
 if($sql)
 {
 $_SESSION['upmsg']="Your Profile updated Successfully";
@@ -38,7 +41,7 @@ header("location:my-profile.php");
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Doctor | Profile</title>
+		<title>Patient | Profile</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -62,16 +65,23 @@ header("location:my-profile.php");
 		<link rel="stylesheet" href="include/sidebar-menu.css">
 
 		<style>
-			body{
-				padding: 0;
-				margin: 0;
-				background: #607D8B;
-			}
+
+		body{
+			padding: 0;
+			margin: 0;
+			background: #607d8b;
+		}
+
 			.mypro{
 				color:black; width:50px; font-size: 30px; float:right;margin-right:25px; border-radius: 50%;
 			}
 			.mypro1{
 				color:black; font-size: 14px; float:right; margin-right:12px;
+			}
+			.profile-part{
+				border-bottom:1px solid #4d79ff; 
+				background-color: #673AB7;
+				margin-top:-8px;
 			}
 			.privacy-policy{
 				width:80%; 
@@ -94,22 +104,18 @@ header("location:my-profile.php");
 				<div class="main-content" >
 					<div class="wrap-content container" id="container">
 						<!-- start: PAGE TITLE -->
-						<section id="page-title" style="border-bottom:2px solid black; background-color:#673ab7; margin-top:-8px;">
+						<section id="page-title" class="profile-part" style="border-bottom: 2px solid black">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle" style="color: floralwhite"><b>My Profile</b></h1>
+									<h1 class="mainTitle" style="color: white"><b>My Profile</b></h1>
 								</div>
 							</div>
 						</section>
-						<!-- end: PAGE TITLE -->
-						<!-- start: BASIC EXAMPLE -->
-						<span><?php echo $_SESSION['upmsg']; ?><?php echo $_SESSION['upmsg']="";?></span>
-						<h5 style="color: green; font-size:18px; ">
-						<?php if($msg) { echo htmlentities($msg);}?> </h5>
-
 
 							<div class="row">
 								<div class="col-md-12">
+<h5 style="color: green; font-size:18px; ">
+<?php if($msg) { echo htmlentities($msg);}?> </h5>
 									<div class="row margin-top-30">
 										<span><?php echo $_SESSION['upmsg']; ?><?php echo $_SESSION['upmsg']="";?></span>
 										<div class="col-lg-8 col-md-12">
@@ -119,7 +125,7 @@ header("location:my-profile.php");
 
 
 									<?php
-$sql=mysqli_query($con,"select * from doctors where id='".$_SESSION['id']."'");
+$sql=mysqli_query($con,"select * from users where id='".$_SESSION['id']."'");
 while($data=mysqli_fetch_array($sql))
 {
 ?>
@@ -130,21 +136,21 @@ while($data=mysqli_fetch_array($sql))
 <div class="container1">
         <div class="leftbox">
             <div class="iconn">
-                <a onclick="tabs(0)" class="tab active">
+                <span onclick="tabs(0)" class="tab active">
                     <i class="fa fa-user-o"></i>
-                </a>
+                </span>
 
-                <a onclick="tabs(1)" class="tab">
+                <span onclick="tabs(1)" class="tab">
                     <i class="fa fa-address-book"></i>
-                </a>
+                </span>
 
-                <a onclick="tabs(2)" class="tab">
+                <span onclick="tabs(2)" class="tab">
                     <i class="fa fa-cog"></i>
-                </a>
+                </span>
 
-                <a onclick="tabs(3)" class="tab">
+                <span onclick="tabs(3)" class="tab">
                     <i class="fa fa-tasks"></i>
-                </a>
+                </span>
 			</div>
 		</div>
 
@@ -153,14 +159,11 @@ while($data=mysqli_fetch_array($sql))
                 <h1 class="Lully">Personal Information</h1>
 
 	 					<form  method="post">
-							<h2 class="fully">Licence Number</h2>
-							<input type="text" class="inpu" name="licence_number" value="<?php echo htmlentities($data['licence_number']);?>" readonly>
+                <h2 class="fully">Full Name</h2>
+                <input type="text" class="inpu" name="fullname" value="<?php echo htmlentities($data['fullname']);?>" readonly>
 
-                <h2 class="fully">Specialization</h2>
-                <input type="text" class="inpu" name="specilization" value="<?php echo htmlentities($data['specilization']);?>" readonly>
-
-								<h2 class="fully">Full Name</h2>
-								<input type="text" class="inpu" name="doctorname" value="<?php echo htmlentities($data['doctorname']);?>" readonly>
+                <h2 class="fully">Birthday</h2>
+                <input type="text" class="inpu" name="birthdate" value="<?php echo htmlentities($data['birthdate']);?>" readonly>
 
                 <h2 class="fully">Gender</h2>
 								<div class="clip-radio radio-primary" >
@@ -178,32 +181,38 @@ while($data=mysqli_fetch_array($sql))
 								</label>
 								</div>
 
+                <h2 class="fully">Blood Group</h2>
+                <input type="text" class="inpu" name="blood_group" value="<?php echo htmlentities($data['blood_group']);?>">
+
+                <h2 class="fully">Occupation</h2>
+                <input type="text" class="inpu" name="occupation" value="<?php echo htmlentities($data['occupation']);?>">
+
                 <br><br>
-                <button type="submit" name="per_i" class="btn">Update</button>
+                <button type="submit" name="per_i" class="btn-new">Update</button>
 								</form>
             </div>
 
             <div class="payment tabShow">
                 <h1 class="Lully">Contact Information</h1>
 
+								<h2 class="fully">Unique ID</h2>
+								<input type="text" class="inpu" value="<?php echo htmlentities($data['uniqueid']);?>" readonly>
+
 								<form  method="post">
 								<h2 class="fully">Email</h2>
-                <input type="email" class="inpu" value="<?php echo htmlentities($data['docEmail']);?>" readonly>
+                <input type="email" class="inpu" value="<?php echo htmlentities($data['email']);?>" readonly>
 
                 <h2 class="fully">Phone Number</h2>
-                <input type="number" class="inpu" name="contact" value="<?php echo htmlentities($data['contactno']);?>" required>
+                <input type="number" class="inpu" name="phone" value="<?php echo htmlentities($data['phone']);?>" required>
 
                 <h2 class="fully">Address</h2>
                 <input type="text" class="inpu" name="address" value="<?php echo htmlentities($data['address']);?>" required>
 
-                <h2 class="fully">Hospital name</h2>
-                <input type="text" class="inpu" name="hospital_name" value="<?php echo htmlentities($data['hospital_name']);?>">
-
-								<h2 class="fully">Fees</h2>
-                <input type="text" class="inpu" name="docFees" value="<?php echo htmlentities($data['docFees']);?>">
+                <h2 class="fully">City</h2>
+                <input type="text" class="inpu" name="city" value="<?php echo htmlentities($data['city']);?>">
 
 				<br><br>
-                <button type="submit" name="con_i" class="btn">Update</button>
+                <button type="submit" name="con_i" class="btn-new">Update</button>
 
 							</form>
             </div>
@@ -211,22 +220,20 @@ while($data=mysqli_fetch_array($sql))
             <div class="cp tabShow">
                 <h1 class="Lully">Settings</h1>
 								<span class="cpy">Do you want to change your Password?</span> <br><br>
-								<a href="change-password.php" class="btn">Yes</a>
+								<a href="change-password.php" class="btn-new">Click here !!</a>
             </div>
 
             <div class="privacy tabShow">
                 <h1 class="Lully">Privacy</h1>
 				<p class="privacy-policy">
-				On our website <b>Proper Use Of Antibiotics & Safe Health</b>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that are collected and recorded by the <b>PUASH</b> team and how we use it.
+				On our website <b>Discuss Your Problems & Safe Health</b>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that are collected and recorded by the <b>Comfort Sheba</b> how we use it.
 If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
-This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collected in <b>PUASH Proper Use Of Antibiotics & Safe Health</b>. This policy is not applicable to any information collected offline or via channels other than this website. Our Privacy Policy was created with the help of the Privacy Policy Generator and the Free Privacy Policy Generator.
+This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collected in <b>Comfort Sheba Discuss Your Problems & Safe Health</b>. This policy is not applicable to any information collected offline or via channels other than this website. Our Privacy Policy was created with the help of the Privacy Policy Generator and the Free Privacy Policy Generator.
 
 				</p>
             </div>
         </div>
 </div>
-
-
 
 													<?php } ?>
 
@@ -235,15 +242,13 @@ This Privacy Policy applies only to our online activities and is valid for visit
 										</div>
 
 											</div>
-										
+										</div>
 									</div>
-								</div>
-
-
+								
 
 					</div>
 </div>
-<br><br><br><br>
+<br><br><br>
 
 			<!-- start: FOOTER -->
 	<?php include('../../include/footer.php');?>
@@ -300,7 +305,6 @@ This Privacy Policy applies only to our online activities and is valid for visit
             $(this).addClass("active").siblings().removeClass("active");
         })
     </script>
-
 
 		<script>
 		if ( window.history.replaceState ) {

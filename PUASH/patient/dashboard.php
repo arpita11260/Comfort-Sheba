@@ -127,7 +127,7 @@ check_login();
 
 	</head>
 	<body>
-		<div id="app">
+		<div id="app"> 
 <?php include('include/sidebar-menu.php');?>
 			<div class="app-content">
 				<!-- end: TOP NAVBAR -->

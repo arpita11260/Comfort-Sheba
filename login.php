@@ -40,7 +40,7 @@ if(isset($_SESSION['role'])){
   <body>
 <section class="total-bdy">
       <header>
-          <a href="index.html" class="logo"><h2>PUASH</h2> Proper Use of Antibiotic & Safe Health</a>
+          <a href="index.html" class="logo"><h2>Comfort Sheba</h2> Discuss Your Problems & Safe Health</a>
           <!-- <a href="#" class="contact">Contact</a> -->
       </header>
 
@@ -109,7 +109,7 @@ if(isset($_SESSION['role'])){
 <!-- footer -->
     <div class="copyrightText">
       <p>
-        Copyright © 2021 By PUASH Team. All Rights Reserved.
+        Copyright © 2021 By Comfort Sheba. All Rights Reserved.
       </p>
     </div>
 

@@ -29,7 +29,7 @@
 
 
         <div class="left_area">
-            <h3><a href="../../index.html"><span style="color: floralwhite !important;">PUA</span><span class="second">SH</span></a></h3>
+            <h3><a href="../../index.html"><span style="color: floralwhite !important;">Comfort</span><span class="second">Sheba</span></a></h3>
           </a>
         </div>
 

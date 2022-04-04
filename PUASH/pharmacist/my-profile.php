@@ -225,9 +225,9 @@ header("location:my-profile.php");
                 <h1 class="Lully">Privacy</h1>
 
                 <p class="privacy-policy">
-				On our website <b>Proper Use Of Antibiotics & Safe Health</b>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that are collected and recorded by the <b>PUASH</b> team and how we use it.
+				On our website <b>Discuss Your Problems & Safe Health</b>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that are collected and recorded by the <b>Comfort Sheba</b> team and how we use it.
 If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
-This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collected in <b>PUASH Proper Use Of Antibiotics & Safe Health</b>. This policy is not applicable to any information collected offline or via channels other than this website. Our Privacy Policy was created with the help of the Privacy Policy Generator and the Free Privacy Policy Generator.
+This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collected in <b>Comfort Sheba Discuss Your Problems & Safe Health</b>. This policy is not applicable to any information collected offline or via channels other than this website. Our Privacy Policy was created with the help of the Privacy Policy Generator and the Free Privacy Policy Generator.
 
 				</p>
 
